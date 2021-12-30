@@ -19,15 +19,11 @@ int main()
     std::cin >> answer1;
     while (answer1 < 1 || answer1 > 4)
     {
-     // std::cout << "INVLAID ANSWER:  " << answer1 << "\n\n";
-     // std::cin >> answer1;
+      //std::cout << "INVLAID ANSWER:  " << answer1 << "\n\n";
+      std::cout << "Retry: ";
+      std::cin >> answer1;
     }
-  /*
-  while (answer1 < 1 || answer1 > 4);
-  {
-    std::cin >> answer1;
-    std::cout <<"\n\nYou entered: " << answer1;
-    /*
+
     if (answer1 == 1)
     {
       hufflepuff++;
@@ -44,14 +40,9 @@ int main()
     {
       gryffindor++;
     }
-    else
-    {
-      std::cout << "Invalid input.\n\n";
-      validInput = false;
-    }
+
     
-  }
-  */
+    
   //Question 2
   //
   std::cout << "Q2) Dawn or Dusk? \n\n";
