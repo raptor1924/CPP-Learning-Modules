@@ -1,20 +1,32 @@
 #include <iostream>
 
-int main()
+main ()
 {
-  //The magic starts here :)
-  int gryffindor=0, hufflepuff=0, ravenclaw=0, slytherin=0;
-  int answer1=0, answer2=0, answer3=0, answer4=0, max=0;
+  //The sorting hat magic starts here
+  //
+  // Declare and initialize variablesd
+  //
+  int gryffindor, hufflepuff, ravenclaw, slytherin;
+  int answer1, answer2, answer3, answer4;
+  int max;
   std::string house;
-  //Question 1 input and logic
+  gryffindor = 0;
+  hufflepuff = 0;
+  ravenclaw = 0;
+  slytherin = 0;
+  max=0;
   //
   std::cout << "The Sorting Hat Quiz!\n\n";
-  std::cout << "Q1) When I'm dead, I want people to remember me as: \n\n";
+  // Throw the questions and collect points!
+  //
+  // QUESTION 1
+  //
+  std::cout << "Q1) When I'm dead, I want people to remember me as:\n\n";
   std::cout << "1) The Good\n";
   std::cout << "2) The Great\n";
   std::cout << "3) The Wise\n";
-  std::cout << "4) The Bold\n";
-  std::cout << "Choose: ";
+  std::cout << "4) The Bold\n\n";
+  std::cout << "Enter a number: ";
   std::cin >> answer1;
   if (answer1 == 1)
   {
@@ -24,24 +36,24 @@ int main()
   {
     slytherin++;
   }
-  else if (answer1 == 3)
+  else if(answer1 == 3)
   {
     ravenclaw++;
   }
-  else if (answer1 == 4)
+  else if(answer1 == 4)
   {
     gryffindor++;
   }
   else
   {
-    std::cout << "Invalid input.\n\n";
+    std::cout << "Invalid Input\n";
   }
-  //Question 2 input and logic
+  // QUESTION 2
   //
-  std::cout << "Q2) Dawn or Dusk? \n\n";
+  std::cout << "\n\nQ2) Dawn or Dusk?\n\n";
   std::cout << "1) Dawn\n";
-  std::cout << "2) Dusk\n";
-  std::cout << "Choose: ";
+  std::cout << "2) Dusk\n\n";
+  std::cout << "Enter a number: ";
   std::cin >> answer2;
   if (answer2 == 1)
   {
@@ -53,18 +65,18 @@ int main()
     hufflepuff++;
     slytherin++;
   }
-  else
+  else 
   {
-    std::cout << "Invlid input.\n\n";
+    std::cout << "Invalid Input\n";
   }
-  //Question 3 input and logic
-  //
-  std::cout << "Q3) Which kind of instrument most pleases your ear? \n\n";
-  std::cout << "1) The Violin\n";
-  std::cout << "2) The Trumpet\n";
-  std::cout << "3) The Piano\n";
-  std::cout << "4) The Drum\n";
-  std::cout << "Choose: ";
+  // QUESTION 3
+  // 
+  std::cout << "\n\nQ3) Which kind of instrument most pleases your ear?\n\n";
+  std::cout << "1) The violin\n";
+  std::cout << "2) The trumpet\n";
+  std::cout << "3) The piano\n";
+  std::cout << "4) The drum\n\n";
+  std::cout << "Enter a number: ";
   std::cin >> answer3;
   if (answer3 == 1)
   {
@@ -78,22 +90,22 @@ int main()
   {
     ravenclaw++;
   }
-    else if (answer3 == 4)
+  else if (answer3 == 4)
   {
     gryffindor++;
   }
   else
   {
-    std::cout << "Invalid input.\n\n";
-  }  
-  //Question 4 input and logic
+    std::cout << "Invalid input\n";
+  }
+  // QUESTION 4
   //
-  std::cout << "Q4) Which road tempts you most? \n\n";
+  std::cout << "\n\nQ4) Which road tempts you most?\n\n";
   std::cout << "1) The wide, sunny grassy lane\n";
   std::cout << "2) The narrow, dark, lantern-lit alley\n";
-  std::cout << "3) The twisting, leaf-strewn path through woods\n";
-  std::cout << "4) The cobbled street lined (ancient buildings)\n";
-  std::cout << "Choose: ";
+  std::cout << "3) The twistingt, leaf-strewn path through the woods\n";
+  std::cout << "4) The cobbled street lined with ancient buildings\n\n";
+  std::cout << "Enter a number: ";
   std::cin >> answer4;
   if (answer4 == 1)
   {
@@ -105,7 +117,7 @@ int main()
   }
   else if (answer4 == 3)
   {
-    gryffindor++;
+      gryffindor++;
   }
   else if (answer4 == 4)
   {
@@ -113,9 +125,9 @@ int main()
   }
   else
   {
-    std::cout << "Invalid input.\n\n";
+    std::cout << "Invalid input\n";
   }
-  //Determine house
+  // Find Max point count and assign house
   //
   if (gryffindor > max)
   {
@@ -137,6 +149,5 @@ int main()
     max = slytherin;
     house = "Slytherin";
   }
-  std::cout << "Your house is:  " << house << "!\n";
-  return 0;
+  std::cout << "Your House Assignmaent is: " << house << "!\n";
 }
