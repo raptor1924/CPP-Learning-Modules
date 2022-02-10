@@ -23,7 +23,7 @@ int main()
   std::cin >> uChoice;
   std::cout << "\nPlayer Choice:  " << uChoice << "\n";
   std::cout << "Computer Choice:  " << cChoice << "\n\n";
-  //Conditionals and logic here
+  //Conditionals and game logic here
   //
   // 1 == Rock
   // 2 == Paper
@@ -41,57 +41,149 @@ int main()
   //Spock smashes Scissors
   //Spock vaporizes Rock
   //
-  // Tie
+  // Player Wins logic via Switch statement
+  //
+  switch (uChoice)
+  {
+    case 1: //Rock
+      if (cChoice == 3)
+      {
+        std::cout << "Rock smashes Scissors!\n";
+        winner = "PLAYER";
+      }
+      else if (cChoice == 4)
+      {
+        std::cout << "Rock crushes Lizard!\n";
+        winner = "PLAYER";
+      }
+      break;
+    case 2: //Paper
+      if (cChoice == 1)
+      {
+        std::cout << "Paper covers Rock!\n";
+        winner = "PLAYER";
+      }
+      else if (cChoice == 5)
+      {
+        std::cout << "Paper disproves Spock!\n";
+        winner = "PLAYER";
+      }
+      break;
+    case 3: //Scissors
+      if (cChoice == 2)
+      {
+        std::cout << "Scissors cuts Paper!\n";
+        winner = "PLAYER";
+      }
+      else if (cChoice == 4)
+      {
+        std::cout << "Scissors decapitates Lizard!\n";
+        winner = "PLAYER";
+      }
+      break;
+    case 4: //Lizard
+      if (cChoice == 2)
+      {
+        std::cout << "Lizard eats Paper!\n";
+        winner = "PLAYER";
+      }
+      else if (cChoice == 5)
+      {
+        std::cout << "Lizard poisons Spock!\n";
+        winner = "PLAYER";
+      }
+      break;
+    case 5: //Spock
+      if (cChoice == 3)
+      {
+        std::cout << "Spock smashes Scissors!\n";
+        winner = "PLAYER";
+      }
+      else if (cChoice == 1)
+      {
+        std::cout << "Spock vaporizes Rock!\n";
+        winner = "PLAYER";
+      }
+      break;
+    default:
+      std::cout << "Invalid Choice!\n";
+      break;
+  }
+  // Computer Wins logic via Switch statement
+  //
+  switch (cChoice)
+  {
+    case 1: //Rock
+      if (uChoice == 3)
+      {
+        std::cout << "Rock smashes Scissors!\n";
+        winner = "COMPUTER";
+      }
+      else if (uChoice == 4)
+      {
+        std::cout << "Rock crushes Lizard!\n";
+        winner = "COMPUTER";
+      }
+      break;
+    case 2: //Paper
+      if (uChoice == 1)
+      {
+        std::cout << "Paper covers Rock!\n";
+        winner = "COMPUTER";
+      }
+      else if (uChoice == 5)
+      {
+        std::cout << "Paper disproves Spock!\n";
+        winner = "COMPUTER";
+      }
+      break;
+    case 3: //Scissors
+      if (uChoice == 2)
+      {
+        std::cout << "Scissors cuts Paper!\n";
+        winner = "COMPUTER";
+      }
+      else if (uChoice == 4)
+      {
+        std::cout << "Scissors decapitates Lizard!\n";
+        winner = "COMPUTER";
+      }
+      break;
+    case 4: //Lizard
+      if (uChoice == 2)
+      {
+        std::cout << "Lizard eats Paper!\n";
+        winner = "COMPUTER";
+      }
+      else if (uChoice == 5)
+      {
+        std::cout << "Lizard poisons Spock!\n";
+        winner = "COMPUTER";
+      }
+      break;
+    case 5: //Spock
+      if (uChoice == 3)
+      {
+        std::cout << "Spock smashes Scissors!\n";
+        winner = "COMPUTER";
+      }
+      else if (uChoice == 1)
+      {
+        std::cout << "Spock vaporizes Rock!\n";
+        winner = "COMPUTER";
+      }
+      break;
+    default:
+      std::cout << "Invalid Choice!\n";
+      break;
+  }
+  std::cout << "\n";
   if (uChoice == cChoice)
   {
-    winner = "TIE!";
+   std::cout << "TIE!\n";
   }
-  // Player Wins logic
-  else if (uChoice == 1 && cChoice == 3)
+  else 
   {
-    std::cout << result1;
-    winner = "PLAYER";
-  }
-  else if (uChoice == 2 && cChoice == 1)
-  {
-    std::cout << result2;
-    winner = "PLAYER";
-  }
-  else if (uChoice == 3 && cChoice == 2)
-  {
-    std::cout << result3;
-    winner = "PLAYER";
-  }
-  else if (uChoice == 4 )
-  {
-
-  }
-  else if (uChoice == 5)
-  {
-
-  }
-  // Computer Wins logic
-  else if (cChoice == 1 && uChoice == 3)
-  {
-    std::cout << result1;
-  }
-  else if (cChoice == 2 && uChoice == 1)
-  {
-    std::cout << result2;
-  }
-  else if (cChoice == 3 && uChoice == 2)
-  {
-    std::cout << result3;
-  }
-  else
-  {
-    std::cout << "Invalid Choice!\n";
-  }
-  // Display winner
-  //
-  std::cout << "\n\n";
-  if (winner != "TIE!")
-  {
-     std::cout << winner << " WINS!\n";
+    std::cout << winner << " WINS!\n";
   }
 }
