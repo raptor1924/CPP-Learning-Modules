@@ -11,19 +11,41 @@ int main()
   std::string userInput;
   std::vector<char> vowels = {'a','e','i','o','u'};
   std::vector<char> result;
-  int indexer = 0;
+  int iIndex = 0, vIndex = 0;
+  char uContinue = 'y';
   // Get user input string to translate
   //
+  while(uContinue == 'y')
+  {
   std::cout << "Enter string to translate to Whale: ";
-  //std::cin.getline() >> userInput;
   std::getline(std::cin, userInput);
-  //std::cout << "input string:  " << userInput << "\n";
-  // userInput = "turpentine and turtles";
   std::cout << "\n" << "String Length: " << userInput.size() << "\n";
   //
-  for (indexer = 0; indexer < userInput.size(); indexer++)
+  for (iIndex = 0; iIndex < userInput.size(); iIndex++)
   {
-    std::cout << userInput[indexer];
+    std::cout << userInput[iIndex];
+    // Nested loop to convert input string vowels to whale
+    // and exclude consonants
+    //
+    for (vIndex = 0; vIndex < vowels.size(); vIndex++)
+    {
+      if (vowels[vIndex] == userInput[iIndex])
+      {
+        result.push_back(userInput[iIndex]);
+      }
+    }
+    if (userInput[iIndex] == 'e' || userInput[iIndex] == 'u')
+    {
+      result.push_back(userInput[iIndex]);
+    }
   }
   std::cout << "\n";
+  for (iIndex = 0; iIndex < result.size(); iIndex++)
+  {
+    std::cout << result[iIndex];
+  }
+  std::cout << "\n\n";
+  std::cout << "Continue with another translation? (y/n)"
+  std::cin >> uContinue;
+  }
 }
