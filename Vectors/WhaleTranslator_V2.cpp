@@ -12,11 +12,8 @@ int main()
   std::vector<char> vowels = {'a','e','i','o','u'};
   std::vector<char> result;
   int iIndex = 0, vIndex = 0;
-  std::string uContinue = "y";
   // Get user input string to translate
   //
-  while(uContinue == "y")
-  {
   std::cout << "Enter string to translate to Whale: ";
   std::getline(std::cin, userInput);
   std::cout << "\n" << "String Length: " << userInput.size() << "\n";
@@ -44,8 +41,5 @@ int main()
   {
     std::cout << result[iIndex];
   }
-  std::cout << "\n\n";
-  std::cout << "Continue with another translation? (y/n)";
-  std::cin >> uContinue;
-  }
+  std::cout << "\n";
 }
